@@ -1,0 +1,252 @@
+<html>
+<title>Automatic time table generator</title>
+    <head>
+    <style>
+ 
+ body {
+  background-image:url(login-page-background-image-3-2.png);
+  color:beige;
+  font-family: sans-serif;
+}
+.errormessage{
+                color: red;
+                font-style: italic;
+            }
+			 .errormessage1{
+                color: red;
+                font-style: italic;
+            }
+h2 {
+  color:beige ;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+a {
+  color:beige;
+  text-decoration: none;
+}
+
+.login {
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -184px 0px 0px -155px;
+background-image: url(professional-background-for-powerpoint-professional-background-for-powerpoint-professional-slide-designs-for-powerpoint-professional-slides-for-powerpoint.jpg);  
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07)
+}
+
+input[type="text"], input[type="password"] {
+  width: 250px;
+  padding: 25px 0px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  outline: none;
+  color:beige;
+}
+input[type=checkbox] {
+  display: none;
+}
+
+label {
+  display: block;
+  position: absolute;
+  margin-top: 2px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background:beige;
+  content: "";
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: 3px solid #252730;
+  box-shadow: 0px 0px 0px 2px #46485c;
+}
+
+#remember:checked ~ label[for=remember] {
+  background: #b5cd60;
+  border: 3px solid #252730;
+  box-shadow: 0px 0px 0px 2px #b5cd60;
+}
+
+
+input[type="submit"] {
+  background: #b5cd60;
+  border: 0;
+  width: 250px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+input[type="submit"]:hover {
+  background: #16aa56;
+}
+
+.forgot {
+  margin-top: 30px;
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  font-weight: bold;
+}
+.forgot:hover {
+  margin-top: 30px;
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  font-weight: bold;
+  color: #6d7781;
+}
+
+.remember {
+  padding: 30px 0px;
+  font-size: 12px;
+  text-indent: 25px;
+  line-height: 15px;
+}
+
+::-webkit-input-placeholder {
+  color:beige;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: all 0.2s linear;
+  transform: translate(10px, 0);
+  opacity: 0;
+}
+        .navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+        .navbar a:hover, .dropdown:hover .dropbtn {
+  background-color:darkcyan;
+}
+
+
+        </style>
+    </head>
+    <body>
+    <form>
+     <div class="navbar">
+  <a href="signup.html">SIGN UP</a>
+  <a href="Main.html">SIGN IN</a>
+        </div>
+ <div class='login'>
+  <h2>Sign in</h2>
+     <table>
+     <tr>
+         <td>
+  <input name='username' placeholder='Username' type='text' required/></td>
+         <td> <span id="err2" class="errormessage1"></span></td>
+              <tr>
+<tr>
+        <td>
+  <input id='password' name='password' placeholder='Password' type='password' required/></td>
+    <td> <span id="err3" class="errormessage1"></span></td>
+     </tr>
+         </table>
+  <div class='remember'>
+    <input checked='' id='remember' name='remember' type='checkbox'/>
+    <label for='remember'></label>Remember me
+  </div>
+  <input type='submit' onclick="window.location='TimeTable.html'" value='Sign in' id="btnsubmit" name="btnsubmit"/>
+  <a class='forgot' href='#'>Forgot your password?</a>
+</div>
+
+
+        </form>
+         <script>
+            var btn=document.getElementById('btnsubmit');
+function checkValidity() 
+{
+    var uname=document.getElementById('username'); 
+    if(uname.checkValidity)
+        {
+	document.getElementById("err2").innerHTML=password1.validationMessage;
+
+	}
+    else if(uname.value!="Admin4545") 
+{ 
+document.getElementById("err2").innerHTML='  Invalid Username.'; 
+
+}
+    
+        var password1 = document.getElementById('password'); 
+
+if(password1.checkValidity )
+	{
+	document.getElementById("err3").innerHTML=password1.validationMessage;
+
+	}
+	
+else if(password1.value!=password2.value) 
+{ 
+document.getElementById("err4").innerHTML='Passwords must match.'; 
+
+} 
+}
+            btn.onclick=function(e) {var bool=checkValidity();if(!bool) { e.preventDefault();} };
+        
+   
+ //show password
+/*$(document).ready(function(){
+    $("#pw").focus(function(){
+        this.type = "text";
+    }).blur(function(){
+        this.type = "password";
+    })   
+});
+
+//Placeholder fixed for Internet Explorer
+$(function() {
+    var input = document.createElement("input");
+    if(('placeholder' in input)==false) { 
+        $('[placeholder]').focus(function() {
+            var i = $(this);
+            if(i.val() == i.attr('placeholder')) {
+                i.val('').removeClass('placeholder');
+                if(i.hasClass('password')) {
+                    i.removeClass('password');
+                    this.type='password';
+                }           
+            }
+        }).blur(function() {
+            var i = $(this);    
+            if(i.val() == '' || i.val() == i.attr('placeholder')) {
+                if(this.type=='password') {
+                    i.addClass('password');
+                    this.type='text';
+                }
+                i.addClass('placeholder').val(i.attr('placeholder'));
+            }
+        }).blur().parents('form').submit(function() {
+            $(this).find('[placeholder]').each(function() {
+                var i = $(this);
+                if(i.val() == i.attr('placeholder'))
+                    i.val('');
+            })
+        });
+    }
+    });*/
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,223 @@
+<html>
+<head>
+    <title>AUTOMATIC TIME TABLE GENERATOR</title>
+     <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+        background-image: url(login-page-background-image-3-2.png);
+
+}
+            .errormessage{
+                color:chartreuse;
+                font-style: italic;
+            }
+			 .errormessage1{
+                color: chartreuse;
+                font-style: italic;
+            }
+
+               .login {
+  width: 350px;
+             height: 300px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin: -184px 0px 0px -155px;
+ background-image: url(professional-background-for-powerpoint-professional-background-for-powerpoint-professional-slide-designs-for-powerpoint-professional-slides-for-powerpoint.jpg); 
+  
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07)
+}
+         
+         input[type="text"] {
+  width: 250px;
+  padding: 25px 0px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  outline: none;
+  color:beige;
+}
+         
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+input[type="button"] {
+  background: #b5cd60;
+  border: 0;
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+input[type="button"]:hover {
+  background: #16aa56;
+}
+         ::-webkit-input-placeholder {
+  color:beige;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: all 0.2s linear;
+  transform: translate(10px, 0);
+  opacity: 0;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="TimeTable.html">HOME</a>
+  <a href="#tt">TIME TABLE</a>
+  <div class="dropdown">
+    <button class="dropbtn">DETAILS 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Subject.html">Subject</a>
+      <a href="Faculty.html">Faculty</a>
+     
+    </div>
+  </div> 
+     
+  <div class="dropdown">
+    <button class="dropbtn">INSERT DATA 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Subjectin.html">Subject</a>
+      <a href="Facultyin.html">Faculty</a>
+     
+    </div>
+  </div>
+ 
+  <a href="Main.html">LOG OUT</a>
+</div>
+
+    </br>
+    </br>
+<div class="login">
+
+<center>
+<table>
+    <tr>
+    
+        <td>
+        <input type="text"  name="fname" placeholder="Enter Faculty name:" id="fname" min="5" pattern="[a-zA-z0-9]{5,50}" required/>
+            <span  class="errormessage">*minimun 5 character required</span></td>
+			<td><span id="err1" class="errormessage1"> </span>
+        </td>
+    </tr>
+    <tr>
+   
+        <td>
+        
+        <input type="text" placeholder="Enter Department:" name="dept" id="dept" min="3" pattern="[a-zA-z0-9]{5,50}" required/>
+            <span  class="errormessage">*minimun 5 character required</span></td>
+			<td><span id="err2" class="errormessage1"> </span>
+        </td>
+        
+    </tr>
+    <tr>
+    
+        <td><input type="button" name="add" id="add" value="ADD" class="button"/></td>
+        <td><input type="button" name="reset" id="reset" value="RESET" class="button"/></td>
+        
+    </tr>
+    </table>
+</center>
+</div>
+
+<script>
+var btn=document.getElementById('add');
+function checkValidity() 
+{
+var names=document.getElementById('fname');	
+	if(names.checkValidity)
+	{
+	document.getElementById("err1").innerHTML=names.validationMessage;
+
+	}
+	else if(names.validity.patternMismatch)
+	{
+	document.getElementById("err1").innerHTML = names.validationMessage;
+	}
+}
+    var btn1=document.getElementById('reset');
+function checkValidityr() 
+{
+    var names1=document.getElementById('dept');	
+	if(names.checkValidity)
+	{
+	document.getElementById("err2").innerHTML=names1.validationMessage;
+
+	}
+	else if(names1.validity.patternMismatch)
+	{
+	document.getElementById("err2").innerHTML = names1.validationMessage;
+	}
+}
+    btn.onclick=function(e) {var bool=checkValidity();if(!bool) { e.preventDefault();} };
+     btn1.onclick=function(e) {var bools=checkValidity();if(!bools) { e.preventDefault();} };
+</script>
+    </body>
+</html>

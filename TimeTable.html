@@ -1,0 +1,196 @@
+<html>
+<head>
+    <title>AUTOMATIC TIME TABLE GENERATOR</title>
+     <style>
+body {
+ font-family:sans-serif;
+    background-image: url(login-page-background-image-3-2.png);
+     
+}
+         .login {
+  width: 350px;
+             height: 300px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  margin: -184px 0px 0px -155px;
+    background-color:darkcyan;
+  
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.3),inset 0px 1px 0px rgba(255,255,255,0.07)
+}
+          input[type="text"] {
+  width: 250px;
+  padding: 25px 0px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  outline: none;
+  color:beige;
+              
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+         input[type="button"] {
+  background: #b5cd60;
+  border: 0;
+  width: 100px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+  input[type="button"]:hover {
+  background: #16aa56;
+}
+    ::-webkit-input-placeholder {
+  color:beige;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: all 0.2s linear;
+  transform: translate(10px, 0);
+  opacity: 0;
+}       
+ 
+</style>
+</head>
+<body>
+<form>
+<div class="navbar">
+  <a href="TimeTable.html">HOME</a>
+  <a href="#tt">TIME TABLE</a>
+  <div class="dropdown">
+    <button class="dropbtn">DETAILS 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Subject.html">Subject</a>
+      <a href="Faculty.html">Faculty</a>
+     
+    </div>
+  </div> 
+     
+   <div class="dropdown">
+    <button class="dropbtn">INSERT DATA 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Subjectin.html">Subject</a>
+      <a href="Facultyin.html">Faculty</a>
+     
+    </div>
+  </div>
+   
+  <a href="Main.html">LOG OUT</a>
+</div>
+
+    </br>
+</br>
+<p>
+   <h2><strong>Welcome admin,</strong></h2>  </br>You can load the details in the database and generate the time table automatically.
+    </p>
+</br>
+<div class="login">
+
+<center>
+    
+    <input type="text"  value="Enter your data below" style="font-color:beige; font-family: sans-serif;font-size: 22">
+</center>
+
+
+<table align="center">
+<tr>
+    <td><input type="text" placeholder="Subject" id="sub" name="sub"/></td>
+    <td><select> 
+					<option></option>
+					<option></option>
+					<option></option>
+					<option></option>
+					<option></option>
+				</select>
+    </td>
+    </tr>
+    <tr>
+    <td><input type="text" placeholder="Faculty" id="sub" name="sub"/></td>
+    <td><select class="sel"> 
+					<option></option>
+					<option></option>
+					<option></option>
+					<option></option>
+					<option></option>
+				</select>
+    </td>
+    </tr>
+     <tr>
+    
+    <td><input type="button" name="sub" id="sub" value="SUBJECT" class="button"/></td>
+        <td><input type="button" name="reset" id="reset" value="RESET" class="button"/></td>
+    </tr>
+</table>
+    </div>
+    </form>
+
+</body>
+    
+</html>
